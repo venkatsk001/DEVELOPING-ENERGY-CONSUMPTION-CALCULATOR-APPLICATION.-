@@ -22,13 +22,96 @@ The Energy Calculator App allows the user to calculate the energy consumption of
 8. Select the suitable available device to display the output. 33. Now run the application to see the output. 
 
 ## PROGRAM:
+package com.example.addressbook;
+
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText name, phone;
+    Button save;
+    TextView output;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        name = findViewById(R.id.name);
+        phone = findViewById(R.id.phone);
+        save = findViewById(R.id.save);
+        output = findViewById(R.id.output);
+
+        save.setOnClickListener(v -> {
+            String contact = "Name: " + name.getText().toString() +
+                    "\nPhone: " + phone.getText().toString();
+            output.setText(contact);
+        });
+    }
+}
+Actvity Main.XML
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/name"
+        android:hint="Enter Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:hint="Enter Phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/save"
+        android:text="Save Contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/output"
+        android:paddingTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp">
+
+
+
+<EditText android:id="@+id/name" android:hint="Enter Name" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+
+
+<EditText android:id="@+id/phone" android:hint="Enter Phone" android:layout_width="match_parent" android:layout_height="wrap_content"
+
+android:inputType="phone"/>
+
+
+
+<Button android:id="@+id/save" android:text="Save Contact" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+
+
+<TextView android:id="@+id/output" android:paddingTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+</LinearLayout>
 
 
 ## OUTPUT:
-
-
-
-
+<img width="1803" height="967" alt="image" src="https://github.com/user-attachments/assets/1f671776-69dd-4bbc-8740-a2c01a277c3d" />
 ## RESULT:
 Thus, the energy consumption calculator app is developed and the output is verified. 
 
