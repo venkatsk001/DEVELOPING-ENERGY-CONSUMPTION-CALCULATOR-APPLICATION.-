@@ -22,9 +22,80 @@ The Energy Calculator App allows the user to calculate the energy consumption of
 8. Select the suitable available device to display the output. 33. Now run the application to see the output. 
 
 ## PROGRAM:
+Main Activity Java
+package com.example.myapplication;
 
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText watts, hours;
+    Button calc;
+    TextView result;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        watts = findViewById(R.id.watts);
+        hours = findViewById(R.id.hours);
+        calc = findViewById(R.id.calc);
+        result = findViewById(R.id.result);
+
+        calc.setOnClickListener(v -> {
+            double w = Double.parseDouble(watts.getText().toString());
+            double h = Double.parseDouble(hours.getText().toString());
+            double kwh = (w * h) / 1000.0;
+            result.setText("Energy Used: " + kwh + " kWh");
+        });
+    }
+}
+Activty Main.Xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/watts"
+        android:hint="Enter Power (Watts)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/hours"
+        android:hint="Enter Time (Hours)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/calc"
+        android:text="Calculate Energy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/result"
+        android:paddingTop="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
 
 ## OUTPUT:
+<img width="1670" height="926" alt="image" src="https://github.com/user-attachments/assets/55811347-916f-43c9-b855-c8e971ee90a9" />
 
 
 
