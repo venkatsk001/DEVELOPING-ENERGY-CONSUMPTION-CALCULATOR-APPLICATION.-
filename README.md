@@ -22,7 +22,7 @@ The Energy Calculator App allows the user to calculate the energy consumption of
 8. Select the suitable available device to display the output. 33. Now run the application to see the output. 
 
 ## PROGRAM:
-
+Main Activity Java
 
 ## OUTPUT:
 
